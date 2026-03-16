@@ -4,8 +4,8 @@ class Evaluator:
     def __init__(self):
         self.tree = ""
     
-    def getType(self):
-        retVal = str(type(self.tree.left))
+    def getType(self, ast):
+        retVal = str(type(ast))
 
         if retVal == "<class 'parser.Node_Add'>":
             retVal = "Add"
@@ -25,9 +25,9 @@ class Evaluator:
             return 0
 
     def evaluateTree(self, ast):   # This is very different to evaluate() trust me bro
-        left_t = self.getType()
-        right_t = self.getType()
-        tree_t = self.getType()
+        left_t = self.getType(ast.left)
+        right_t = self.getType(ast.right)
+        tree_t = self.getType(ast)
 
         if left_t in operations:
             final_left = self.evaluateTree(ast.left)
@@ -39,7 +39,7 @@ class Evaluator:
         else:
             final_right = self.num(ast.right)
         
-        return final_left + final_right
+        return self.num(final_left + final_right)
 
     def evaluate(self, ast):   # This doesn't evaluate anything but sets up self.tree for other methods to use
         self.tree = ast

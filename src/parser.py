@@ -53,6 +53,11 @@ class Parser:
 
         while not self.atEnd():
             node = self.parseTerm()
-            self.tree = node
+
+            if self.tree == "":
+                self.tree = node
+            else:
+                if self.peek(-1) == "+":
+                    self.tree = Node_Add(self.tree, self.consume())
 
         return self.tree
