@@ -1,4 +1,4 @@
-# Math Expression Evaluator v0.1
+# Math Expression Evaluator v0.2
 Evaluates math expressions. Pretty self explanatory.
 
 ## How to Use and Run
@@ -15,5 +15,8 @@ py main.py "1 + 2"
 ```
 
 ## Changelogs
+**v0.2:**
+- Allowed mulitple numbers to be summed (e.g. 1 + 2 + 3, 4 + 3 + 2 + 1)
+
 **v0.1:**
 - Release (only supports [number] + [number] for now)
