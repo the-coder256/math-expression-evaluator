@@ -2,6 +2,10 @@ class Node_Add:
     def __init__(self, left, right):
         self.left = left
         self.right = right
+class Node_Sub:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
 
 class Parser:
     def __init__(self):
@@ -43,6 +47,9 @@ class Parser:
         if operator == "+":
             self.check(left, right)
             return Node_Add(left, right)
+        elif operator == "-":
+            self.check(left, right)
+            return Node_Sub(left, right)
 
 
     def atEnd(self):
@@ -59,5 +66,7 @@ class Parser:
             else:
                 if self.peek(-1) == "+":
                     self.tree = Node_Add(self.tree, self.consume())
+                elif self.peek(-1) == "-":
+                    self.tree = Node_Sub(self.tree, self.consume())
 
         return self.tree

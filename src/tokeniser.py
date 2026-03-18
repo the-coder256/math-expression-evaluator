@@ -14,6 +14,10 @@ class Tokeniser:
                 self.tokens.append(self.currentToken)
                 self.tokens.append(char)
                 self.currentToken = ""
+            elif char == "-":
+                self.tokens.append(self.currentToken)
+                self.tokens.append(char)
+                self.currentToken = ""
             else:
                 self.currentToken += char
         
