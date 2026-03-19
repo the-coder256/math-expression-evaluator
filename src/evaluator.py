@@ -1,4 +1,4 @@
-operations = ["Add", "Sub"]
+operations = ["Add", "Sub", "Mul", "Div"]
 
 class Evaluator:
     def __init__(self):
@@ -11,6 +11,10 @@ class Evaluator:
             retVal = "Add"
         elif retVal == "<class 'parser.Node_Sub'>":
             retVal = "Sub"
+        elif retVal == "<class 'parser.Node_Mul'>":
+            retVal = "Mul"
+        elif retVal == "<class 'parser.Node_Div'>":
+            retVal = "Div"
         
         return retVal
 
@@ -45,6 +49,10 @@ class Evaluator:
             return self.num(final_left + final_right)
         elif tree_t == "Sub":
             return self.num(final_left - final_right)
+        if tree_t == "Mul":
+            return self.num(final_left * final_right)
+        elif tree_t == "Div":
+            return self.num(final_left / final_right)
 
     def evaluate(self, ast):   # This doesn't evaluate anything but sets up self.tree for other methods to use
         self.tree = ast
