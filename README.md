@@ -1,4 +1,4 @@
-# Math Expression Evaluator v0.3
+# Math Expression Evaluator v0.4
 Evaluates math expressions. Pretty self explanatory.
 
 ## How to Use and Run
@@ -15,6 +15,10 @@ py main.py "1 + 2"
 ```
 
 ## Changelogs
+**v0.4:**
+- Added multiplication and division
+- The program exits if you input a number (and prints it)
+
 **v0.3:**
 - Added subtraction!
 
